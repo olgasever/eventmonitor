@@ -21,18 +21,16 @@ push-to-releases:
         repository: olgaseverya/eventmonitor
         registry: https://registry.hub.docker.com/v2
         cmd: node /pipeline/source/index.js
-
-# for now we will delete and recreate the namespace, however, at some point that may be a little much for just a redeployment of the Pod! 
-restart-OSACDC:
+restart-occs:
   steps:
     # Manage Oracle Container Cloud Service container
-    - peternagy/oracle-OSACDC-container-util:
-        OSACDC_user: admin
-        OSACDC_password: Alten2016#
+    - peternagy/oracle-occs-container-util:
+        occs_user: admin
+        occs_password: Alten2016#
         rest_server_url: 129.157.177.182
         function: restart
         deployment_name: eventmonitor
-
+# for now we will delete and recreate the namespace, however, at some point that may be a little much for just a redeployment of the Pod! 
 deploy-to-oke:
   box:
         id: alpine
