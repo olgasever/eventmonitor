@@ -23,7 +23,7 @@ push-to-releases:
         cmd: node /pipeline/source/index.js
 restart-occs:
   steps:
-    # Manage Oracle Container Cloud Service container
+    # Manage Oracle Container Cloud Service container on OCI
     - peternagy/oracle-occs-container-util:
         occs_user: admin
         occs_password: Alten2016#
