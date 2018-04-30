@@ -23,6 +23,16 @@ push-to-releases:
         cmd: node /pipeline/source/index.js
 
 # for now we will delete and recreate the namespace, however, at some point that may be a little much for just a redeployment of the Pod! 
+restart-OSACDC:
+  steps:
+    # Manage Oracle Container Cloud Service container
+    - peternagy/oracle-OSACDC-container-util:
+        OSACDC_user: admin
+        OSACDC_password: Alten2016#
+        rest_server_url: 129.157.177.182
+        function: restart
+        deployment_name: eventmonitor
+
 deploy-to-oke:
   box:
         id: alpine
