@@ -17,7 +17,7 @@ push-to-releases:
     - internal/docker-push:
         username: olgaseverya
         password: bx1z1zpb
-        tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
+        tag: 0.2
         repository: olgaseverya/eventmonitor
         registry: https://registry.hub.docker.com/v2
         cmd: node /pipeline/source/index.js
