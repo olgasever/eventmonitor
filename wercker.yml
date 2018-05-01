@@ -121,7 +121,7 @@ functional-test:
               mkdir -p "/pipeline"
               node $WERCKER_ROOT/index.js &
               sleep 5
-              EVENT_MONITOR_MS_URL=http://129.157.177.182:8098/health
+              EVENT_MONITOR_MS_URL=http://localhost:8098/health
               echo 'Microservice URL=' $EVENT_MONITOR_MS_URL
               if curl -X GET  $EVENT_MONITOR_MS_URL | grep "uptime"
               then
